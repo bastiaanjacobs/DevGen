@@ -1,11 +1,6 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
+import styled from "styled-components"
+
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
@@ -35,35 +30,51 @@ const Bio = () => {
     }
   `)
 
+  const Button = styled.a`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    padding: 0.15rem 1rem;
+    margin: 1rem 0;
+    width: auto;
+    background: #fff;
+    color: #111;
+    border: 1px solid #ababab;
+  `
+
   const { author, social } = data.site.siteMetadata
   return (
-    <div
-      style={{
-        display: `flex`,
-        marginBottom: rhythm(2.5),
-      }}
-    >
-      <Image
-        fixed={data.avatar.childImageSharp.fixed}
-        alt={author.name}
+    <>
+      <Button>Button</Button>
+      <section
         style={{
-          marginRight: rhythm(1 / 2),
-          marginBottom: 0,
-          minWidth: 50,
-          borderRadius: `100%`,
+          display: `flex`,
+          marginBottom: rhythm(2.5),
         }}
-        imgStyle={{
-          borderRadius: `50%`,
-        }}
-      />
-      <p>
-        Written by <strong>{author.name}</strong> {author.summary}
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
-      </p>
-    </div>
+      >
+        <Image
+          fixed={data.avatar.childImageSharp.fixed}
+          alt={author.name}
+          style={{
+            marginRight: rhythm(1 / 2),
+            marginBottom: 0,
+            minWidth: 50,
+            borderRadius: `100%`,
+          }}
+          imgStyle={{
+            borderRadius: `50%`,
+          }}
+        />
+        <p>
+          Written by <strong>{author.name}</strong> {author.summary}
+          {` `}
+          <a href={`https://twitter.com/${social.twitter}`}>
+            You should follow him on Twitter
+          </a>
+        </p>
+      </section>
+    </>
   )
 }
 
