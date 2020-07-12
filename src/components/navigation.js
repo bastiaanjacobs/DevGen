@@ -20,9 +20,9 @@ const Navigation = () => {
 
     return (
         <ul>
-            {menuLinks.map(link => {
+            {menuLinks.map((link, i) => {
                 return (
-                    <li>
+                    <li key={i}>
                         <Link to={link.url}>{link.name}</Link>
                     </li>
                 )
