@@ -1,10 +1,18 @@
 import React from "react"
 import styled from "styled-components"
-
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
+
+const Intro = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.15rem 1rem;
+  margin: 1rem 0;
+  color: #111;
+`
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -30,29 +38,10 @@ const Bio = () => {
     }
   `)
 
-  const Button = styled.a`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 2px;
-    padding: 0.15rem 1rem;
-    margin: 1rem 0;
-    width: auto;
-    background: #fff;
-    color: #111;
-    border: 1px solid #ababab;
-  `
-
   const { author, social } = data.site.siteMetadata
   return (
     <>
-      <Button>Button</Button>
-      <section
-        style={{
-          display: `flex`,
-          marginBottom: rhythm(2.5),
-        }}
-      >
+      <Intro>
         <Image
           fixed={data.avatar.childImageSharp.fixed}
           alt={author.name}
@@ -73,7 +62,7 @@ const Bio = () => {
             You should follow him on Twitter
           </a>
         </p>
-      </section>
+      </Intro>
     </>
   )
 }
