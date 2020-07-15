@@ -8,10 +8,9 @@ const HeaderSection = styled.header`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.15rem 1rem;
-    margin: 1rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    color: #333;
+    padding: 5rem;
+    margin: 0 0 1rem 0;
+    background: #F4F5FB;
 `
 
 const Header = ({ title }) => {

@@ -7,16 +7,13 @@ const FooterSection = styled.footer`
     align-items: center;
     padding: 5rem;
     margin: 1rem 0 0 0;
-    color: #fff;
-    background: #212121;
+    background: #F4F5FB;
 `
 
 const Footer = () => {
     return (
         <FooterSection>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
+            © {new Date().getFullYear()}, Built with Gatsby
         </FooterSection>
     )
 }

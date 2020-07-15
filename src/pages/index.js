@@ -6,16 +6,14 @@ import Bio from '../components/bio'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
+import '../style.css'
+
 const Post = styled.section`
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 2px;
-    padding: 0.15rem 1rem;
-    margin: 1rem 0;
-    background: #fff;
-    color: #111;
-    border: 1px solid #ababab;
+    flex-direction: column;
+    padding: 1rem 0;
+    margin: 0;
+    border-bottom: 1px solid #F4F5FB;
 `
 
 const BlogIndex = ({ data, location }) => {

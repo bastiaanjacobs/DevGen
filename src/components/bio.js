@@ -7,9 +7,9 @@ const Intro = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.15rem 1rem;
+    padding: 0;
     margin: 1rem 0;
-    color: #111;
+    max-width: 480px;
 `
 
 const Bio = () => {
