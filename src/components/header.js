@@ -10,28 +10,32 @@ const HeaderSection = styled.header`
     align-items: center;
     padding: 5rem;
     margin: 0 0 1rem 0;
-    background: #F4F5FB;
+    background: #fff;
+    border-bottom: 1px solid #dbdbdb;
+`
+
+const HeaderContained = styled.section`
+    max-width: 1100px;
+    margin: 0 auto;
 `
 
 const Header = ({ title }) => {
     return (
         <HeaderSection>
-            <h1
-                style={{
-                    marginTop: 0,
-                }}
-            >
-                <Link
-                    style={{
-                        boxShadow: `none`,
-                        color: `inherit`,
-                    }}
-                    to={`/`}
-                >
-                    {title}
-                </Link>
-            </h1>
-            <Navigation />
+            <HeaderContained>
+                <h1>
+                    <Link
+                        style={{
+                            boxShadow: `none`,
+                            color: `inherit`,
+                        }}
+                        to={`/`}
+                    >
+                        {title}
+                    </Link>
+                </h1>
+                <Navigation />
+            </HeaderContained>
         </HeaderSection>
     )
 }

@@ -10,10 +10,35 @@ import '../style.css'
 
 const Post = styled.section`
     display: flex;
-    flex-direction: column;
-    padding: 1rem 0;
-    margin: 0;
-    border-bottom: 1px solid #F4F5FB;
+    flex-direction: row;
+    padding: 0;
+    margin: 1rem;
+    background: #f5f5f5;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25);
+`
+
+const PostSide = styled.aside`
+    color: #9c9c9c;
+    text-align: center;
+    background: #ffffff;
+    padding: 2rem 1rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+    width: 150px;
+`
+
+const PostMain = styled.section`
+    background: #f5f5f5;
+    width: calc(100% - 150px);
+`
+
+const PostHeader = styled.header`
+    background: #f5f5f5;
+    padding: 1rem 2rem;
+`
+
+const PostContent = styled.section`
+    background: #fafafa;
+    padding: 1rem 2rem;
 `
 
 const BlogIndex = ({ data, location }) => {
@@ -28,26 +53,28 @@ const BlogIndex = ({ data, location }) => {
                 const title = node.frontmatter.title || node.fields.slug
                 return (
                     <Post key={node.fields.slug}>
-                        <header>
-                            <h3>
-                                <Link
-                                    style={{ boxShadow: `none` }}
-                                    to={node.fields.slug}
-                                >
-                                    {title}
-                                </Link>
-                            </h3>
-                            <small>{node.frontmatter.date}</small>
-                        </header>
-                        <section>
-                            <p
-                                dangerouslySetInnerHTML={{
-                                    __html:
-                                        node.frontmatter.description ||
-                                        node.excerpt,
-                                }}
-                            />
-                        </section>
+                        <PostSide>{node.frontmatter.date}</PostSide>
+                        <PostMain>
+                            <PostHeader>
+                                <h3>
+                                    <Link
+                                        style={{ boxShadow: `none` }}
+                                        to={node.fields.slug}
+                                    >
+                                        {title}
+                                    </Link>
+                                </h3>
+                            </PostHeader>
+                            <PostContent>
+                                <p
+                                    dangerouslySetInnerHTML={{
+                                        __html:
+                                            node.frontmatter.description ||
+                                            node.excerpt,
+                                    }}
+                                />
+                            </PostContent>
+                        </PostMain>
                     </Post>
                 )
             })}

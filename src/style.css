@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     font: 12px sans-serif;
     color: #000;
     height: 100%;
@@ -18,4 +19,9 @@ html, body {
 #gatsby-focus-wrapper {
     display: flex;
     flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
 }

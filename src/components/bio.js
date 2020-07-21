@@ -8,7 +8,7 @@ const Intro = styled.section`
     justify-content: center;
     align-items: center;
     padding: 0;
-    margin: 1rem 0;
+    margin: 1rem 1rem 3rem 1rem;
     max-width: 480px;
 `
 
@@ -44,7 +44,7 @@ const Bio = () => {
                     fixed={data.avatar.childImageSharp.fixed}
                     alt={author.name}
                     style={{
-                        marginBottom: 0,
+                        marginRight: 15,
                         minWidth: 50,
                         borderRadius: `100%`,
                     }}
