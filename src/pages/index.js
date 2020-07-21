@@ -38,7 +38,7 @@ const PostHeader = styled.header`
 
 const PostContent = styled.section`
     background: #fafafa;
-    padding: 1rem 2rem;
+    padding: 3rem 2rem;
 `
 
 const BlogIndex = ({ data, location }) => {
